@@ -1,0 +1,11 @@
+[Unit]
+Description=CDE Syslog Service - Daily archive timer
+Requires=cde-syslog.service
+
+[Timer]
+OnCalendar=Daily
+Persistent=true
+Unit=cde-syslog_archive.service
+
+[Install]
+WantedBy=basic.target

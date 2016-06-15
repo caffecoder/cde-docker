@@ -1,0 +1,12 @@
+[Unit]
+Description=CDE Syslog Service
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a cde-syslog
+ExecStop=/usr/bin/docker stop -t 2 cde-syslog
+
+[Install]
+WantedBy=multi-user.target
