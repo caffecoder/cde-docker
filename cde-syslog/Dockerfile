@@ -10,6 +10,9 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN mkdir -p /opt/etc
 RUN mkdir -p /opt/bin
 
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 ADD syslog-ng /opt/etc/syslog-ng
 ADD bin/archive.sh /opt/bin/archive.sh
 
