@@ -1,6 +1,8 @@
 FROM caffecoder/cde-baseimage
 MAINTAINER Adam Kubica <caffecoder@kaizen-step.com>
 
+ARG RUBY_VERSION=2.3.0
+
 RUN apt-get update
 RUN apt-get -y install build-essential
 RUN apt-get -y install git-core
@@ -28,8 +30,8 @@ RUN chmod +x /etc/profile.d/rbenv.sh
 ENV RBENV_ROOT /opt/rbenv
 ENV PATH /opt/rbenv/bin:/opt/rbenv/shims:$PATH
 
-RUN rbenv install 2.3.0
-RUN rbenv global 2.3.0
+RUN rbenv install $RUBY_VERSION
+RUN rbenv global $RUBY_VERSION
 
 RUN gem install bundler
 
