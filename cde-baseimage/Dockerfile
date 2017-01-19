@@ -9,7 +9,12 @@ RUN rm /etc/localtime
 RUN echo "Europe/Warsaw" > /etc/timezone
 RUN dpkg-reconfigure tzdata
 
-RUN apt-get update && apt-get dist-upgrade -y && apt-get clean
+RUN apt-get update
+RUN apt-get install -y apt-utils
+RUN apt-get install -y apt-transport-https
+RUN apt-get dist-upgrade -y
+
+RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # overwrite this with 'CMD []' in a dependent Dockerfile
