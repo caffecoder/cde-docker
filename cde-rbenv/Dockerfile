@@ -1,7 +1,7 @@
-FROM caffecoder/cde-baseimage
-MAINTAINER Adam Kubica <caffecoder@kaizen-step.com>
+FROM xcdr/cde-baseimage
+MAINTAINER Adam Kubica <xcdr@kaizen-step.com>
 
-ARG RUBY_VERSION=2.3.0
+ARG RUBY_VERSION=2.3.4
 
 RUN apt-get update
 RUN apt-get -y install build-essential
