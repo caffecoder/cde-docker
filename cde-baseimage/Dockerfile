@@ -8,6 +8,7 @@ RUN apt-get update
 RUN apt-get install -y apt-utils
 RUN apt-get install -y apt-transport-https
 RUN apt-get install -y locales
+RUN apt-get install -y tzdata
 RUN apt-get dist-upgrade -y
 
 RUN apt-get clean
