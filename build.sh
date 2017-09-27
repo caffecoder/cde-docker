@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 
-#DANGLING=$(docker images -f "dangling=true" -q)
-#
-#if [ ! -z $DANGLING ]; then
-#    docker rmi $DANGLING
-#fi
-
-docker pull ubuntu:16.04
+docker pull debian:stretch
 
 docker image prune -f
 

@@ -1,7 +1,7 @@
 FROM xcdr/cde-baseimage
 MAINTAINER Adam Kubica <xcdr@kaizen-step.com>
 
-ARG RUBY_VERSION=2.3.4
+ARG RUBY_VERSION=2.4.0
 
 RUN apt-get update
 RUN apt-get -y install build-essential
@@ -12,7 +12,6 @@ RUN apt-get -y install libgmp-dev
 RUN apt-get -y install libreadline-dev
 RUN apt-get -y install libssl-dev
 RUN apt-get -y install zlib1g-dev
-RUN apt-get -y install curl
 
 RUN git clone git://github.com/sstephenson/rbenv.git /opt/rbenv
 RUN git clone git://github.com/sstephenson/ruby-build.git /opt/rbenv/plugins/ruby-build

@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM debian:9
 MAINTAINER Adam Kubica <xcdr@kaizen-step.com>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -9,6 +9,8 @@ RUN apt-get install -y apt-utils
 RUN apt-get install -y apt-transport-https
 RUN apt-get install -y locales
 RUN apt-get install -y tzdata
+RUN apt-get install -y dirmngr
+RUN apt-get install -y curl
 RUN apt-get dist-upgrade -y
 
 RUN apt-get clean
