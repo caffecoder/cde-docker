@@ -3,7 +3,7 @@ MAINTAINER Adam Kubica <xcdr@kaizen-step.com>
 
 RUN apt-get update
 RUN apt-get -y install curl
-RUN apt-get -y install openjdk-8-jdk
+RUN apt-get -y install openjdk-8-jdk-headless
 
 RUN java -version
 RUN javac -version
