@@ -4,6 +4,8 @@ MAINTAINER Adam Kubica <xcdr@kaizen-step.com>
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ=Europe/Warsaw
 
+COPY sources.list /etc/apt/sources.list
+
 RUN apt-get update
 RUN apt-get install -y apt-utils
 RUN apt-get install -y apt-transport-https
