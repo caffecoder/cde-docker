@@ -9,8 +9,9 @@ docker build --rm -t xcdr/cde-baseimage cde-baseimage
 
 docker build --rm -t xcdr/cde-java cde-java
 
-docker build --build-arg RUBY_VERSION=2.4.3 --rm -t xcdr/cde-rbenv:2.4 cde-rbenv
-docker build --build-arg RUBY_VERSION=2.4.3 --rm -t xcdr/cde-rbenv:latest cde-rbenv
+docker build --build-arg RUBY_VERSION=2.3.7 --rm -t xcdr/cde-rbenv:2.3 cde-rbenv
+docker build --build-arg RUBY_VERSION=2.4.4 --rm -t xcdr/cde-rbenv:2.4 cde-rbenv
+docker build --build-arg RUBY_VERSION=2.4.4 --rm -t xcdr/cde-rbenv:latest cde-rbenv
 
 docker build --rm -t xcdr/cde-syslog cde-syslog
 

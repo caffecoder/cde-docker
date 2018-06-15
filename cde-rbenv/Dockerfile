@@ -2,16 +2,17 @@ FROM xcdr/cde-baseimage
 MAINTAINER Adam Kubica <xcdr@kaizen-step.com>
 
 ARG RUBY_VERSION=2.4.0
+ARG LIBSSL_PACKAGE=libssl-dev
 
 RUN apt-get update
-RUN apt-get -y install build-essential
-RUN apt-get -y install git-core
-RUN apt-get -y install libcurl4-openssl-dev
-RUN apt-get -y install libffi-dev
-RUN apt-get -y install libgmp-dev
-RUN apt-get -y install libreadline-dev
-RUN apt-get -y install libssl-dev
-RUN apt-get -y install zlib1g-dev
+RUN apt-get install -y build-essential
+RUN apt-get install -y git-core
+RUN apt-get install -y libcurl4-openssl-dev
+RUN apt-get install -y libffi-dev
+RUN apt-get install -y libgmp-dev
+RUN apt-get install -y libreadline-dev
+RUN apt-get install -y zlib1g-dev
+RUN apt-get install -y $LIBSSL_PACKAGE
 
 RUN git clone git://github.com/sstephenson/rbenv.git /opt/rbenv
 RUN git clone git://github.com/sstephenson/ruby-build.git /opt/rbenv/plugins/ruby-build
