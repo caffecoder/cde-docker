@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker pull debian:stretch
+docker pull debian:9
 docker pull php:7.2-apache
 
 docker system prune -f
