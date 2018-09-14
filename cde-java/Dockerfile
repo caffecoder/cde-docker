@@ -1,5 +1,6 @@
 FROM xcdr/cde-baseimage
-MAINTAINER Adam Kubica <xcdr@kaizen-step.com>
+
+LABEL maintainer="Adam Kubica <xcdr@kaizen-step.com>"
 
 RUN apt-get update
 RUN apt-get -y install openjdk-8-jdk-headless

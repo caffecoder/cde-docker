@@ -1,5 +1,6 @@
 FROM php:7.2-apache
-MAINTAINER Adam Kubica <xcdr@kaizen-step.com>
+
+LABEL maintainer="Adam Kubica <xcdr@kaizen-step.com>"
 
 ENV REDIS_HOST 172.17.0.1
 ENV REDIS_PORT 6379

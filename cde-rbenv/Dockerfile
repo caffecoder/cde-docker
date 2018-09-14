@@ -1,5 +1,6 @@
 FROM xcdr/cde-baseimage
-MAINTAINER Adam Kubica <xcdr@kaizen-step.com>
+
+LABEL maintainer="Adam Kubica <xcdr@kaizen-step.com>"
 
 ARG RUBY_VERSION=2.4.0
 ARG LIBSSL_PACKAGE=libssl-dev
