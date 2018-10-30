@@ -1,24 +1,20 @@
-FROM xcdr/cde-baseimage
+FROM alpine:3.8
 
 LABEL maintainer="Adam Kubica <xcdr@kaizen-step.com>"
 
-RUN apt-get update
-RUN apt-get install -y syslog-ng bzip2
+ENV TZ=Europe/Warsaw
+ENV SYSLOG_PORT=514
 
-RUN apt-get clean
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apk --no-cache add syslog-ng bzip2
 
 RUN mkdir -p /opt/etc
 RUN mkdir -p /opt/bin
 
-RUN apt-get clean
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
 ADD syslog-ng /opt/etc/syslog-ng
-ADD bin/archive.sh /opt/bin/archive.sh
+ADD bin /opt/bin/
 
-EXPOSE 514
+EXPOSE ${SYSLOG_PORT}/tcp ${SYSLOG_PORT}/udp
 
-VOLUME /mnt/logarch
+VOLUME /app_data
 
-ENTRYPOINT ["/usr/sbin/syslog-ng", "-F" ,"-f", "/opt/etc/syslog-ng/syslog-ng.conf", "--no-caps"]
+CMD ["/usr/sbin/syslog-ng", "-F" ,"-f", "/opt/etc/syslog-ng/syslog-ng.conf", "--no-caps"]
