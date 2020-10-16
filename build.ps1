@@ -42,17 +42,6 @@ if ($?) {
     docker push xcdr/cde-rbenv:latest
 }
 
-# cde-syslog
-Write-Host -ForegroundColor Green "Build cde-syslog"
-
-docker pull alpine:3.8
-
-docker build --rm -t xcdr/cde-syslog cde-syslog 
-
-if ($?) {
-    docker push xcdr/cde-syslog
-}
-
 # cde-roundcube
 Write-Host -ForegroundColor Green "Build cde-roundcube"
 

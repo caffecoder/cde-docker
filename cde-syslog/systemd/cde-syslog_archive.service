@@ -1,8 +1,0 @@
-[Unit]
-Description=CDE Syslog Archive Service
-Requires=cde-syslog.service
-After=cde-syslog.service
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/docker exec cde-syslog /opt/bin/archive.sh
